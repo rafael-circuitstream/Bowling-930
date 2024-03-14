@@ -4,20 +4,37 @@ using UnityEngine;
 
 public class BallSpawner : MonoBehaviour
 {
-    public GameObject arrow;
+    public int amountOfThrowns;
     public GameObject _ballPrefab;
     public Vector3 startPosition;
+
+
+    GameManager manager;
+
     // Start is called before the first frame update
     void Start()
     {
-        
-        
+        manager = FindObjectOfType<GameManager>();
+        RestartGame();
+    }
+    public void ResetThrows()
+    {
+        amountOfThrowns = 0;
     }
     public void RestartGame()
     {
-        GameObject clone = Instantiate(_ballPrefab, startPosition, Quaternion.identity);
+        if (amountOfThrowns >= 2)
+        {
+            manager.GoToNextFrame();
+        }
 
-        arrow.transform.SetParent(clone.transform);
+        if(!manager.isGameOver)
+        {
+            amountOfThrowns++;
+
+            GameObject clone = Instantiate(_ballPrefab, startPosition, Quaternion.identity);
+        }
+
     }
 
     // Update is called once per frame

@@ -49,7 +49,7 @@ public class BallController : MonoBehaviour
                 ballRb.AddForce(arrow.transform.forward * _forceSpeed, ForceMode.Impulse);
                 isBallThrown = true;
                 arrowAnimator.SetBool("CannotThrow", true);
-                arrow.transform.SetParent(null);
+                arrow.gameObject.SetActive(false);
             }
 
             horizontal = Input.GetAxisRaw("Horizontal");
