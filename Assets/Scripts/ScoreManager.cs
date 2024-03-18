@@ -8,5 +8,5 @@ public class ScoreManager : MonoBehaviour
     public int currentFrameScore;
     public int totalScore;
 
-    
+    public int accumulatedScore;
 }

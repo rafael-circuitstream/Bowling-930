@@ -37,20 +37,38 @@ public class PitController : MonoBehaviour
 
         //ITERATING THROUGH EVERY PIN WE HAVE ON OUR ARRAY
         int amountOfHits = 0;
-
+        int currentHits = 0;
         foreach(Pin pin in pins)
         {
             if(pin.IsItFallen())
             {
+                if (pin.gameObject.activeInHierarchy) currentHits++;
                 pin.gameObject.SetActive(false);
                 amountOfHits++;
                 Debug.Log(pin.gameObject.name + " is fallen");
             }
         }
         manager.scoreManager.currentFrameScore = amountOfHits;
+
+        manager.uiManager.SetScoreCurrentFrame(currentHits, manager.spawner.amountOfThrowns, manager.scoreManager.currentFrame);
+
+
+
         if(amountOfHits == 10)
         {
-            manager.GoToNextFrame();
+            if (manager.spawner.amountOfThrowns == 1)
+            {
+                //saving the appropriate score the appropriate way
+                //STRIKE
+                manager.uiManager.ShowStrikeImage();
+            }
+            else if (manager.spawner.amountOfThrowns == 2)
+            {
+                //SPARE
+                manager.uiManager.ShowSpareImage();
+            }
+
+            manager.GoToNextFrame(); 
         }
 
         manager.StartNewThrow();

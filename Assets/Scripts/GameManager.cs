@@ -9,6 +9,7 @@ public class GameManager : MonoBehaviour
     public BallSpawner spawner;
     public PitController pitController;
     public ScoreManager scoreManager;
+    public UIManager uiManager;
     // Start is called before the first frame update
     void Start()
     {
@@ -25,6 +26,10 @@ public class GameManager : MonoBehaviour
         scoreManager.totalScore += scoreManager.currentFrameScore;
         scoreManager.currentFrameScore = 0;
         isGameOver = true;
+        //CALL ANYTHING YOU WANT
+        uiManager.gameObject.SetActive(false);
+        uiManager.results.gameObject.SetActive(true);
+        uiManager.results.ShowScore();
     }
     public void StartNewThrow()
     {
@@ -42,6 +47,8 @@ public class GameManager : MonoBehaviour
 
     public void GoToNextFrame()
     {
+        
+
         scoreManager.currentFrame++;
 
         if (scoreManager.currentFrame >= maxAmountOfFrames) //CHECKING IF ITS THE LAST FRAME
@@ -52,7 +59,12 @@ public class GameManager : MonoBehaviour
         }
         else
         {
+            //if we have value accumulated, use the accumulated value to add to the score
+
             scoreManager.totalScore += scoreManager.currentFrameScore;
+
+            uiManager.SetTotalScoreOnFrame(scoreManager.totalScore, scoreManager.currentFrame - 1);
+
             scoreManager.currentFrameScore = 0;
             //set score
             //reset all pins

@@ -66,7 +66,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 00
+  m_text: 
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 89b8cba9d1f5aae40a809666d2e20beb, type: 2}
   m_sharedMaterial: {fileID: 6949584454144852646, guid: 89b8cba9d1f5aae40a809666d2e20beb,
@@ -202,7 +202,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 00
+  m_text: 
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 89b8cba9d1f5aae40a809666d2e20beb, type: 2}
   m_sharedMaterial: {fileID: 6949584454144852646, guid: 89b8cba9d1f5aae40a809666d2e20beb,
@@ -230,7 +230,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 41.3
+  m_fontSize: 34.1
   m_fontSizeBase: 34.1
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -338,7 +338,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 000
+  m_text: 
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 89b8cba9d1f5aae40a809666d2e20beb, type: 2}
   m_sharedMaterial: {fileID: 6949584454144852646, guid: 89b8cba9d1f5aae40a809666d2e20beb,
@@ -366,7 +366,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 50.75
+  m_fontSize: 56.91
   m_fontSizeBase: 56.91
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -419,6 +419,7 @@ GameObject:
   - component: {fileID: 4419255698986810741}
   - component: {fileID: 4419255698986810743}
   - component: {fileID: 4419255698986810740}
+  - component: {fileID: 9072162469996647868}
   m_Layer: 5
   m_Name: UI Frame
   m_TagString: Untagged
@@ -488,6 +489,22 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
+--- !u!114 &9072162469996647868
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4419255698986810738}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9ac39abea142be948b2fc7503694c693, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  firstThrowScore: {fileID: 4419255698481399747}
+  secondThrowScore: {fileID: 4419255697459885672}
+  frameNumberText: {fileID: 4419255699507901270}
+  totalScoreText: {fileID: 4419255698890535521}
 --- !u!1 &4419255699507901268
 GameObject:
   m_ObjectHideFlags: 0
