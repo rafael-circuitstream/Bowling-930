@@ -6,12 +6,16 @@ public class Pin : MonoBehaviour
 {
     public Rigidbody rigidbodyPin;
 
+    SoundManager soundManager;
+
     Vector3 originalPosition;
     Quaternion originalRotation;
 
     // Start is called before the first frame update
     void Start()
     {
+        soundManager = FindObjectOfType<SoundManager>();
+
         originalPosition = rigidbodyPin.position;
         originalRotation = rigidbodyPin.rotation;
     }
@@ -45,6 +49,15 @@ public class Pin : MonoBehaviour
         }
 
         return isFallen;
+
+    }
+
+    private void OnCollisionEnter(Collision collision)
+    {
+        if(collision.gameObject.CompareTag("Ball"))
+        {
+            soundManager.PlayPinsSound();
+        }
 
     }
 }

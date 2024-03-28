@@ -5,7 +5,7 @@ using UnityEngine;
 public class BallSpawner : MonoBehaviour
 {
     public int amountOfThrowns;
-    public GameObject _ballPrefab;
+    public GameObject[] _ballPrefabs;
     public Vector3 startPosition;
 
 
@@ -31,8 +31,7 @@ public class BallSpawner : MonoBehaviour
         if(!manager.isGameOver)
         {
             amountOfThrowns++;
-
-            GameObject clone = Instantiate(_ballPrefab, startPosition, Quaternion.identity);
+            GameObject clone = Instantiate(_ballPrefabs[Random.Range(0, _ballPrefabs.Length)], startPosition, Quaternion.identity);
         }
 
     }

@@ -1,5 +1,3 @@
-using UnityEditor;
-using UnityEditor.ShaderKeywordFilter;
 using UnityEngine;
 
 public class Ball : MonoBehaviour

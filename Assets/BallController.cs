@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class BallController : MonoBehaviour
 {
+    public AudioSource ballSound;
+    
     public float _forceSpeed;
     public float maxDistanceFromOrigin;
     public GameObject arrow;
@@ -48,6 +50,7 @@ public class BallController : MonoBehaviour
                 //Bowl
                 ballRb.AddForce(arrow.transform.forward * _forceSpeed, ForceMode.Impulse);
                 isBallThrown = true;
+                ballSound.Play();
                 arrowAnimator.SetBool("CannotThrow", true);
                 arrow.gameObject.SetActive(false);
             }
